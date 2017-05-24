@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Toolbox</title>
+  <meta property="og:title" content="Toolbox" />
+  <meta name="twitter:title" content="Toolbox" />
+  <meta name="description" content="No PHP existem diversas funções para se trabalhar com arrays . Neste post vou abordar 3 delas que conheci recentemente e que vem me ajudando muito.
+Como desenvolvedor web me sinto obrigado a estar sempre atualizado e buscando conteúdos para aprender. Em meio a estes encontrei diversos posts falando sobre as mágicas que o os métodos .map(), .reduce() e .filter() do JavaScript fazem. confesso que fiquei bem empolgado e fui procurar algo parecido em PHP.">
+  <meta property="og:description" content="No PHP existem diversas funções para se trabalhar com arrays . Neste post vou abordar 3 delas que conheci recentemente e que vem me ajudando muito.
+Como desenvolvedor web me sinto obrigado a estar sempre atualizado e buscando conteúdos para aprender. Em meio a estes encontrei diversos posts falando sobre as mágicas que o os métodos .map(), .reduce() e .filter() do JavaScript fazem. confesso que fiquei bem empolgado e fui procurar algo parecido em PHP.">
+  <meta name="twitter:description" content="No PHP existem diversas funções para se trabalhar com arrays . Neste post vou abordar 3 delas que conheci recentemente e que vem me ajudando muito.
+Como desenvolvedor web me sinto obrigado a estar …">
+  <meta name="author" content=""/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://bedgerotto.github.io/toolbox/post/tratando-arrays-em-php/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Toolbox" />
+
+  <meta name="generator" content="Hugo 0.20.7" />
+  <link rel="canonical" href="https://bedgerotto.github.io/toolbox/post/tratando-arrays-em-php/" />
+  <link rel="alternate" href="https://bedgerotto.github.io/toolbox/index.xml" type="application/rss+xml" title="Toolbox">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bedgerotto.github.io/toolbox/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://bedgerotto.github.io/toolbox/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="https://bedgerotto.github.io/toolbox/css/highlight.min.css" />
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://bedgerotto.github.io/toolbox/">Toolbox</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  <div class="intro-header"></div>
+
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>No PHP existem diversas funções para se trabalhar com <a href="https://secure.php.net/manual/pt_BR/ref.array.php">arrays</a>
+. Neste post vou abordar 3 delas que conheci recentemente e que vem me ajudando muito.</p>
+
+<p>Como desenvolvedor web  me sinto obrigado a estar sempre atualizado e buscando conteúdos para aprender. Em meio a estes encontrei diversos posts falando sobre as mágicas que o os métodos .map(), .reduce() e .filter() do JavaScript fazem.
+confesso que fiquei bem empolgado e fui procurar algo parecido em PHP. E não é que encontrei.</p>
+
+<pre><code class="language-php">array_reduce();
+array_map();
+array_filter();
+</code></pre>
+
+<p>Vou detalhar um a um logo abaixo:</p>
+
+<p><strong>array_reduce</strong></p>
+
+<p>Conforme a descrição da documentação, esta função itera sobre os elementos de um array e executa uma função callback sobre cada um. Porém retorna um único valor.
+Ex:</p>
+
+<pre><code class="language-php">$toSum = [1,2,3,4,5];
+
+$sum = array_reduce($toSum, function($carry, $num) {
+    return ($carry + $num);
+});
+echo $sum;
+// Neste caso será exibido na tela o número 15
+</code></pre>
+
+<p><strong>array_map</strong>
+Também conforme a documentação do PHP, esta função executa uma função callback em cada elemento de um array passado por parâmetro. Essa função callback retorna o elemento modificado.
+Ex:</p>
+
+<pre><code class="language-php">$clientes = [
+    [ 'nome' =&gt; 'José', 'idade' =&gt; 30 ],
+    [ 'nome' =&gt; 'Maria', 'idade' =&gt; 45],
+    [ 'nome' =&gt; 'João', 'idade' =&gt; 35]
+];
+
+$newClientes = array_map(function ($arr){
+    $arr['nome'] = str_toupper($arr['nome']);
+    $arr['idade'] = $arr['idade'] + 10;
+    return $arr;
+}, $clientes);
+
+var_dump($newClientes);
+/*
+O resultado deve ser um array parecido com o seguinte
+[
+    [ 'nome' =&gt; 'JOSÉ', 'idade' =&gt; 40 ],
+    [ 'nome' =&gt; 'MARIA', 'idade' =&gt; 55],
+    [ 'nome' =&gt; 'JOÃO', 'idade' =&gt; 45]
+]
+*/
+</code></pre>
+
+<p><strong>array_filter</strong>
+Mais uma vez, baseado na própria documentação do php, podemos ver que o array_filter, faz juz ao seu nome. Ele filtra um array passado por parametro, utilizando uma função callback. Cada elemento que deve estar no array deve ser retornado pelo callback.
+Ex:</p>
+
+<pre><code class="language-php">$clientes = [
+    [ 'nome' =&gt; 'José', 'idade' =&gt; 30 ],
+    [ 'nome' =&gt; 'Maria', 'idade' =&gt; 45],
+    [ 'nome' =&gt; 'João', 'idade' =&gt; 35]
+];
+
+$newClientes = array_filter($clientes, function ($arr){
+    if ($arr['idade'] &gt; 40) {
+        return $arr;
+    }
+});
+
+var_dump($newClientes);
+/*
+O resultado deve ser um array parecido com o seguinte
+[
+    [ 'nome' =&gt; 'Maria', 'idade' =&gt; 45]
+]
+*/
+</code></pre>
+
+<p>Bom, são três exemplos bem simples mas que demonstram um pouco do uso dessas funções poderosas. Existem diversas outras funções para se trabalhar com array no php que podem inclusive ser mescladas com as apresentadas aqui para gerar novos resultados. Com certeza as possíbilidades são bem grandes.</p>
+
+<p>Espero ter ajudado e instigado no aprofundamento da linguagem.</p>
+
+<p>Até o próximo post.</p>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+          &nbsp;&bull;&nbsp;
+          0001
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://bedgerotto.github.io/toolbox/">Toolbox</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.20.7</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://bedgerotto.github.io/toolbox/js/main.js"></script>
+<script src="https://bedgerotto.github.io/toolbox/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+
+
+
+
+
+  </body>
+</html>
+
