@@ -6,10 +6,22 @@
     <description>Recent content on Toolbox</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Sep 2017 07:39:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 20 Sep 2017 21:30:00 -0300</lastBuildDate>
     
 	<atom:link href="https://bedgerotto.github.io/toolbox/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Variáveis</title>
+      <link>https://bedgerotto.github.io/toolbox/post/vari%C3%A1veis/</link>
+      <pubDate>Wed, 20 Sep 2017 21:30:00 -0300</pubDate>
+      
+      <guid>https://bedgerotto.github.io/toolbox/post/vari%C3%A1veis/</guid>
+      <description>As variáveis em PHP podem ser definidas com umas infinidade de nomes, porém, mesmo com toda a flexibilidade que a linguagem oferece existem algumas regrinhas e tipos para serem observados.
+Regra: Toda variável em PHP deve iniciar com $ (cifrão). Em seguida deve vir um caracter não numérico, isso inclui _ e -.
+A gama de definições possível para variáveis é representada pela seguinte expressão regular: [a-zA-Z\x7f-\xff][a-zA-Z0-9\x7f-\xff]*
+Tipos Apesar de não ser uma linguagem fortemente tipada, o PHP trabalha com alguns tipos primitivos, comuns entre outros lingagens, tipos compostos e especiais.</description>
+    </item>
     
     <item>
       <title>Tags PHP</title>

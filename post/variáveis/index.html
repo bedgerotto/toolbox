@@ -5,27 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Tags PHP</title>
-  <meta property="og:title" content="Tags PHP" />
-  <meta name="twitter:title" content="Tags PHP" />
-  <meta name="description" content="Uma coisa bem simples mas que poucas pessoas se atentam são as tags disponíveis para serem usadas no PHP.
-Comumente utilizamos a tag &ldquo;&lt;?php&rdquo; para iniciar nossos códigos e &ldquo;?&gt;&rdquo; para finalizar. Mas existem outras formas de se fazer isso e ainda um alerta para quem costuma fechar a tag PHP.
-Possíveis tags para o php:  &lt;?php
- Este é o padrão recomendado na documentação da linguagem. É o que a maioria dos devs utilizam.">
-  <meta property="og:description" content="Uma coisa bem simples mas que poucas pessoas se atentam são as tags disponíveis para serem usadas no PHP.
-Comumente utilizamos a tag &ldquo;&lt;?php&rdquo; para iniciar nossos códigos e &ldquo;?&gt;&rdquo; para finalizar. Mas existem outras formas de se fazer isso e ainda um alerta para quem costuma fechar a tag PHP.
-Possíveis tags para o php:  &lt;?php
- Este é o padrão recomendado na documentação da linguagem. É o que a maioria dos devs utilizam.">
-  <meta name="twitter:description" content="Uma coisa bem simples mas que poucas pessoas se atentam são as tags disponíveis para serem usadas no PHP.
-Comumente utilizamos a tag &ldquo;&lt;?php&rdquo; para iniciar nossos códigos e …">
+  <title>Variáveis</title>
+  <meta property="og:title" content="Variáveis" />
+  <meta name="twitter:title" content="Variáveis" />
+  <meta name="description" content="As variáveis em PHP podem ser definidas com umas infinidade de nomes, porém, mesmo com toda a flexibilidade que a linguagem oferece existem algumas regrinhas e tipos para serem observados.
+Regra: Toda variável em PHP deve iniciar com $ (cifrão). Em seguida deve vir um caracter não numérico, isso inclui _ e -.
+A gama de definições possível para variáveis é representada pela seguinte expressão regular: [a-zA-Z\x7f-\xff][a-zA-Z0-9\x7f-\xff]*
+Tipos Apesar de não ser uma linguagem fortemente tipada, o PHP trabalha com alguns tipos primitivos, comuns entre outros lingagens, tipos compostos e especiais.">
+  <meta property="og:description" content="As variáveis em PHP podem ser definidas com umas infinidade de nomes, porém, mesmo com toda a flexibilidade que a linguagem oferece existem algumas regrinhas e tipos para serem observados.
+Regra: Toda variável em PHP deve iniciar com $ (cifrão). Em seguida deve vir um caracter não numérico, isso inclui _ e -.
+A gama de definições possível para variáveis é representada pela seguinte expressão regular: [a-zA-Z\x7f-\xff][a-zA-Z0-9\x7f-\xff]*
+Tipos Apesar de não ser uma linguagem fortemente tipada, o PHP trabalha com alguns tipos primitivos, comuns entre outros lingagens, tipos compostos e especiais.">
+  <meta name="twitter:description" content="As variáveis em PHP podem ser definidas com umas infinidade de nomes, porém, mesmo com toda a flexibilidade que a linguagem oferece existem algumas regrinhas e tipos para serem observados.
+Regra: Toda …">
   <meta name="author" content=""/>
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://bedgerotto.github.io/toolbox/post/tags-php/" />
+  <meta property="og:url" content="https://bedgerotto.github.io/toolbox/post/vari%C3%A1veis/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Toolbox" />
 
   <meta name="generator" content="Hugo 0.20.7" />
-  <link rel="canonical" href="https://bedgerotto.github.io/toolbox/post/tags-php/" />
+  <link rel="canonical" href="https://bedgerotto.github.io/toolbox/post/vari%C3%A1veis/" />
   <link rel="alternate" href="https://bedgerotto.github.io/toolbox/index.xml" type="application/rss+xml" title="Toolbox">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -91,11 +91,11 @@ Comumente utilizamos a tag &ldquo;&lt;?php&rdquo; para iniciar nossos códigos e
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Tags PHP</h1>
+              <h1>Variáveis</h1>
                 
                 
                   <span class="post-meta">
-  Posted on September 14, 2017
+  Posted on September 20, 2017
   
 </span>
 
@@ -116,42 +116,94 @@ Comumente utilizamos a tag &ldquo;&lt;?php&rdquo; para iniciar nossos códigos e
       <article role="main" class="blog-post">
         
 
-<p>Uma coisa bem simples mas que poucas pessoas se atentam são as tags disponíveis para serem usadas no PHP.</p>
+<p>As variáveis em PHP podem ser definidas com umas infinidade de nomes, porém, mesmo com toda a flexibilidade que a linguagem oferece existem algumas regrinhas e tipos para serem observados.</p>
 
-<p>Comumente utilizamos a tag &ldquo;&lt;?php&rdquo; para iniciar nossos códigos e &ldquo;?&gt;&rdquo; para finalizar. Mas existem outras formas de se fazer isso e ainda um alerta para quem costuma fechar a tag PHP.</p>
+<h2 id="regra">Regra:</h2>
 
-<h3 id="possíveis-tags-para-o-php">Possíveis tags para o php:</h3>
+<p>Toda variável em PHP deve iniciar com $ (cifrão). Em seguida deve vir um caracter não numérico, isso inclui _ e -.</p>
 
-<ol>
-<li><p><strong>&lt;?php</strong></p>
+<p>A gama de definições possível para variáveis é representada pela seguinte expressão regular:       [a-zA-Z<em>\x7f-\xff][a-zA-Z0-9</em>\x7f-\xff]*</p>
 
-<ul>
-<li>Este é o padrão recomendado na documentação da linguagem. É o que a maioria dos devs utilizam.</li>
-</ul></li>
+<h2 id="tipos">Tipos</h2>
 
-<li><p><strong>&lt;?</strong></p>
+<p>Apesar de não ser uma linguagem fortemente tipada, o PHP trabalha com alguns tipos primitivos, comuns entre outros lingagens, tipos compostos e especiais. Abaixo deixo uma tabela com os tipos que a própria documentação disponibiliza:</p>
 
-<ul>
-<li>Esta forma também é bastante utilizada, principalmente para escreve código php junto ao html de forma mais simples. Porém para utilizar esta forma é necessário habilitar esta opção no php.ini. Por este motivo esta forma não é muito recomendada.</li>
-</ul></li>
+<table>
+<thead>
+<tr>
+<th>Escalares</th>
+<th>Compostos</th>
+<th>Especial</th>
+</tr>
+</thead>
 
-<li><p><strong>&lt; script language=&ldquo;php&rdquo;&gt;&lt;/ script&gt;</strong> e <strong>&lt;%</strong></p>
+<tbody>
+<tr>
+<td>integer</td>
+<td>Array</td>
+<td>Resource</td>
+</tr>
 
-<ul>
-<li>Script tags e ASP tags. Estas formas já são bem menos conhecidas e sub utilizadas. Seu uso não é recomendado e foram removidas na versão 7 do php.</li>
-</ul></li>
-</ol>
+<tr>
+<td>float</td>
+<td>Object</td>
+<td>Null</td>
+</tr>
 
-<hr />
+<tr>
+<td>string</td>
+<td>Callable</td>
+<td></td>
+</tr>
 
-<h2 id="o-problema-das-tags-php">O problema das tags php:</h2>
+<tr>
+<td>boolean</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
-<p>Ao escrever um arquivo php, seja ele uma classe, uma função ou um simples formulálrio, não recomenda-se fechar a tag php. Desta forma evita-se escrever espaços em branco ou linhas vazias no final do arquivo, o que iniciaria o buffer de saída quando não tiver nada para enviar.</p>
+<p>Escalares: int, float, scalar, boleano</p>
+
+<h2 id="atribuição">Atribuição</h2>
+
+<p>Existem 2 tipos de atribuição de variáveis possíveis. Por Valor e Por Referência</p>
+
+<h3 id="atribuição-por-valor">Atribuição por valor</h3>
+
+<p>Este tipo de atribuição é o mais comum e o mais utilizado. Na verdade, nem há muito o que se falar sobre ele pois o próprio conceito de variável o define.</p>
+
+<p>Para utilizar este tipo basta declarar uma variável $a e atribuir um alor qualquer a ela. Depois podemos atribuir $a como valor de $b. Ao fazermos isto, $a e $b teriam o mesmo valor, porém ao mudar o valor de $a, $b manteria seu valor atribuido inicialmente. Exemplo:</p>
+
+<pre><code class="language-php">$a = 10; // Atribuição de $a
+$b = $a; // Atribuição de $a em $b
+$a = 20; // Trocando valor de $
+
+print $a; // 20
+print $b; // 10
+</code></pre>
+
+<p>Simples não? Pois então, vamos para o próximo</p>
+
+<h3 id="atribuição-por-referência">Atribuição por referência</h3>
+
+<p>Este modelo de atribuição de variáveis é menos utilizado por iniciantes, porém não menos importante. Neste caso vamos iniciar uma variável $a e atribuir o valor 10 a ela. Depois iniciamos a variável $b e atribuimos $a como referencia utilizando o operador &amp;. Neste ponto $b não tem um valor próprio, mas ele é uma referência para $a. Então se alteramos o valor de $a, logo, alteramos também o valor de $b. Exemplo:</p>
+
+<pre><code class="language-php">$a = 10; // Atribuição de $a
+$b = &amp;$a; // Atribuição de $a em $b
+$a = 20; // Trocando valor de $
+
+print $a; // 20
+print $b; // 20
+</code></pre>
+
+<p>Obs: Objetos em PHP SEMPRE serão passados como referência</p>
 
 <p><em>Referencias:</em></p>
 
 <ul>
-<li><a href="https://secure.php.net/manual/pt_BR/language.basic-syntax.phptags.php">Documentação PHP</a></li>
+<li><a href="http://php.net/manual/pt_BR/language.variables.basics.php">Documentação PHP</a></li>
 <li><a href="https://www.casadocodigo.com.br/products/livro-certificacao-php">Livro Certiicação PHP</a></li>
 </ul>
 
@@ -160,13 +212,9 @@ Comumente utilizamos a tag &ldquo;&lt;?php&rdquo; para iniciar nossos códigos e
       <ul class="pager blog-pager">
         
           <li class="previous">
-            <a href="https://bedgerotto.github.io/toolbox/post/tratando-arrays-em-php/" data-toggle="tooltip" data-placement="top" title="Tratando arrays em PHP">&larr; Previous Post</a>
+            <a href="https://bedgerotto.github.io/toolbox/post/tags-php/" data-toggle="tooltip" data-placement="top" title="Tags PHP">&larr; Previous Post</a>
           </li>
         
-        
-          <li class="next">
-            <a href="https://bedgerotto.github.io/toolbox/post/vari%C3%A1veis/" data-toggle="tooltip" data-placement="top" title="Variáveis">Next Post &rarr;</a>
-          </li>
         
       </ul>
 
