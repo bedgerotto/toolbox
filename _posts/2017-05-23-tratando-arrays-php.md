@@ -3,7 +3,7 @@ layout: post
 title: Tratamento de arrays em PHP
 date: 2017-05-23 22:30:50 -0300
 categories: [PROGRAMMING]
-tags: [PHP, CERTIFICATION] 
+tags: [PHP, CERTIFICATION]
 ---
 
 # Tratando arrays em PHP
